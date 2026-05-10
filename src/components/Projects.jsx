@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ExternalLink, Github, Database, Globe, Cpu, FileText, Shield, FolderGit2 } from 'lucide-react';
 
 const techColorMap = {
@@ -31,7 +31,7 @@ const highlightIcons = {
 const projects = [
     {
         title: 'Real-Time Chat Application',
-        description: 'A full-stack real-time chat app built on the MERN stack â€” designed for instant messaging, user presence tracking, and seamless delivery without HTTP polling.',
+        description: 'A full-stack real-time chat app built on the MERN stack - designed for instant messaging, user presence tracking, and seamless delivery without HTTP polling.',
         tech: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Socket.io', 'React'],
         highlights: [
             'Built a real-time chat application using Socket.io and Express.js, eliminating HTTP polling and enabling near-instant message delivery for a seamless user experience.',
@@ -45,13 +45,13 @@ const projects = [
     },
     {
         title: 'Smart Report Generator',
-        description: 'A full-stack academic reporting system built on a modular microservice architecture. It ties together the frontend, backend, and AI layers to automate student performance analysis â€” from raw data to personalized reports delivered via email.',
+        description: 'A full-stack academic reporting system built on a modular microservice architecture. It ties together the frontend, backend, and AI layers to automate student performance analysis - from raw data to personalized reports delivered via email.',
         tech: ['Next.js', 'Express.js', 'FastAPI', 'Redis', 'Groq (Llama 3.1)', 'Puppeteer', 'Cloudinary', 'Resend API', 'Prisma'],
         highlights: [
-            'Built the full system end-to-end with Next.js, Express.js, and FastAPI â€” each service owns a clear responsibility, keeping things modular and easy to scale.',
+            'Built the full system end-to-end with Next.js, Express.js, and FastAPI - each service owns a clear responsibility, keeping things modular and easy to scale.',
             'Set up session-based auth using Redis and UUIDs, with role-based access control for Students, Proctors, and Admins so each user only sees what they should.',
-            'Developed an AI insights module with FastAPI and Groq (Llama 3.1) that generates personalized performance remarks automatically â€” saving hours of manual evaluation.',
-            'Created a pipeline that generates PDF reports via Puppeteer, stores them on Cloudinary, and sends them through Resend â€” fully automated, no manual sharing needed.',
+            'Developed an AI insights module with FastAPI and Groq (Llama 3.1) that generates personalized performance remarks automatically - saving hours of manual evaluation.',
+            'Created a pipeline that generates PDF reports via Puppeteer, stores them on Cloudinary, and sends them through Resend - fully automated, no manual sharing needed.',
             'Designed clean REST APIs with input validation, secure routing, and query optimization to keep response times fast and the system reliable.'
         ],
         github: 'https://github.com/Akashnavani/Smart-Report-Generator.git',
