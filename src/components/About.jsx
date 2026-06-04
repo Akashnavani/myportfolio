@@ -1,43 +1,62 @@
 import { motion } from 'framer-motion';
-import { User } from 'lucide-react';
 
 const About = () => {
     return (
-        <section id="about" className="py-28 relative overflow-hidden">
-            {/* Ambient Background Glow */}
-            <div className="absolute top-1/2 -right-48 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[120px] -z-10 pointer-events-none" />
-            <div className="absolute bottom-0 left-[10%] w-[400px] h-[400px] bg-indigo-500/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
+        <section id="about" className="py-24 md:py-32 relative overflow-hidden">
+            <div className="absolute top-1/2 -right-48 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-[150px] pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-6 max-w-4xl relative z-10">
+                {/* Section header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-100px' }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="max-w-4xl mx-auto bg-white/[0.03] border border-white/[0.07] rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden group hover:border-primary/20 transition-all duration-500 shadow-[0_8px_40px_rgba(0,0,0,0.15)]"
+                    viewport={{ once: true, margin: '-80px' }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-10"
                 >
-                    {/* Hover glow */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-indigo-500/3 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">
+                        About Me
+                    </h2>
+                    <div className="w-12 h-[3px] bg-gradient-to-r from-primary to-accent rounded-full" />
+                </motion.div>
 
-                    <div className="flex items-center gap-5 mb-10 relative z-10">
-                        <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/20">
-                            <User size={22} className="text-primary" />
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-                            About Me
-                        </h2>
-                        <div className="h-[2px] bg-gradient-to-r from-primary/40 to-transparent flex-1 rounded-full"></div>
-                    </div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-80px' }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                    {/* Summary pull-quote */}
+                    <p className="font-display text-xl md:text-2xl font-semibold text-foreground/90 leading-[1.5] tracking-tight mb-8">
+                        Software Engineer passionate about developing efficient, reliable,{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                            and production-ready applications.
+                        </span>
+                    </p>
 
-                    <div className="space-y-5 text-foreground/65 text-[1.05rem] md:text-lg leading-[1.8] font-light relative z-10">
+                    <div className="space-y-5 text-muted text-[1.02rem] md:text-lg leading-[1.8] font-light">
                         <p>
-                            I'm a <strong className="text-white font-medium">software engineer</strong> with a solid foundation in Java, data structures, and algorithms. I enjoy the challenge of building backend systems that are clean, reliable, and built to last.
+                            I have strong expertise in{' '}
+                            <span className="font-mono text-primary text-[0.88em]">Java</span>,{' '}
+                            <span className="font-mono text-primary text-[0.88em]">Data Structures & Algorithms</span>,
+                            and Full Stack Development. I'm experienced in building scalable web applications,
+                            REST APIs, real-time systems, secure authentication, and responsive user interfaces
+                            using modern technologies.
                         </p>
                         <p>
-                            Over the past few years, I've been working hands-on with <strong className="text-white font-medium">Node.js, Express.js, and REST APIs</strong> — building everything from authentication flows to real-time messaging. I care about writing code that's not just functional, but thoughtfully structured.
+                            I work hands-on with{' '}
+                            <span className="font-mono text-primary text-[0.88em]">React.js</span>,{' '}
+                            <span className="font-mono text-primary text-[0.88em]">Node.js</span>,{' '}
+                            <span className="font-mono text-primary text-[0.88em]">Express.js</span>, and{' '}
+                            <span className="font-mono text-primary text-[0.88em]">MongoDB</span>{' '}
+                            — building everything from authentication flows and AI-powered platforms
+                            to real-time messaging applications.
                         </p>
                         <p>
-                            Whether it's setting up <strong className="text-white font-medium">session management with Redis</strong> or wiring up WebSocket connections, I'm always looking for the cleanest way to solve a problem without over-engineering it.
+                            Whether it's architecting microservice systems, setting up session management with{' '}
+                            <span className="font-mono text-primary text-[0.88em]">Redis</span>,
+                            or wiring up WebSocket connections — I focus on writing code that's clean,
+                            reliable, and built to scale.
                         </p>
                     </div>
                 </motion.div>

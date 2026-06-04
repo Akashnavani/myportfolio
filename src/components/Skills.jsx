@@ -1,91 +1,87 @@
 import { motion } from 'framer-motion';
-import { Wrench } from 'lucide-react';
 
 const skillCategories = [
     {
         title: 'Languages',
-        color: 'from-blue-500/20 to-cyan-500/10',
-        borderHover: 'hover:border-blue-400/25',
-        skills: ['Java', 'C', 'Python', 'JavaScript']
-    },
-    {
-        title: 'Backend',
-        color: 'from-emerald-500/20 to-green-500/10',
-        borderHover: 'hover:border-emerald-400/25',
-        skills: ['Node.js', 'Express.js', 'REST APIs', 'Socket.io', 'JWT Auth']
+        accent: '#3B82F6',
+        skills: ['Java', 'C', 'JavaScript', 'Python'],
     },
     {
         title: 'Frontend',
-        color: 'from-violet-500/20 to-purple-500/10',
-        borderHover: 'hover:border-violet-400/25',
-        skills: ['HTML', 'CSS']
+        accent: '#A78BFA',
+        skills: ['HTML', 'Tailwind CSS', 'JavaScript', 'React.js'],
+    },
+    {
+        title: 'Backend',
+        accent: '#34D399',
+        skills: ['Node.js', 'Express.js'],
     },
     {
         title: 'Databases',
-        color: 'from-amber-500/20 to-orange-500/10',
-        borderHover: 'hover:border-amber-400/25',
-        skills: ['MongoDB', 'MySQL']
+        accent: '#FBBF24',
+        skills: ['MySQL', 'MongoDB'],
     },
     {
-        title: 'Core CS',
-        color: 'from-rose-500/20 to-pink-500/10',
-        borderHover: 'hover:border-rose-400/25',
-        skills: ['DSA', 'OOP', 'DBMS', 'Operating Systems', 'Networks']
+        title: 'Core Concepts',
+        accent: '#FB7185',
+        skills: ['DSA', 'OOP', 'DBMS', 'Operating Systems', 'Computer Networks'],
+    },
+    {
+        title: 'Other Technologies',
+        accent: '#06B6D4',
+        skills: ['JWT Authentication', 'REST APIs', 'Socket.io'],
     },
     {
         title: 'Tools',
-        color: 'from-sky-500/20 to-blue-500/10',
-        borderHover: 'hover:border-sky-400/25',
-        skills: ['Git', 'GitHub', 'IntelliJ IDEA', 'VS Code', 'Tableau']
+        accent: '#38BDF8',
+        skills: ['IntelliJ IDEA', 'Eclipse', 'VS Code', 'Git', 'GitHub'],
     }
 ];
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-28 relative overflow-hidden">
-            {/* Ambient Background Glow */}
-            <div className="absolute top-[30%] left-[15%] w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[130px] -z-10 pointer-events-none" />
-            <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
+        <section id="skills" className="py-24 md:py-32 relative overflow-hidden">
+            <div className="absolute top-[30%] left-[10%] w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-[150px] pointer-events-none" />
 
-            <div className="container mx-auto px-6 max-w-6xl relative z-10">
+            <div className="container mx-auto px-6 max-w-5xl relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-100px' }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="mb-14"
+                    viewport={{ once: true, margin: '-80px' }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-12"
                 >
-                    <div className="flex items-center gap-5 mb-5">
-                        <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/20">
-                            <Wrench size={22} className="text-primary" />
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">Skills & Expertise</h2>
-                        <div className="h-[2px] bg-gradient-to-r from-primary/40 to-transparent flex-1 rounded-full"></div>
-                    </div>
-                    <p className="text-foreground/55 text-lg font-light ml-[52px]">The tools and technologies I work with day to day.</p>
+                    <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">
+                        Skills & Expertise
+                    </h2>
+                    <div className="w-12 h-[3px] bg-gradient-to-r from-primary to-accent rounded-full" />
+                    <p className="text-muted text-base font-light mt-4">
+                        The tools and technologies I work with day to day.
+                    </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     {skillCategories.map((category, idx) => (
                         <motion.div
                             key={category.title}
-                            initial={{ opacity: 0, y: 25 }}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: '-50px' }}
-                            transition={{ duration: 0.5, delay: idx * 0.08, ease: "easeOut" }}
-                            className={`bg-white/[0.03] border border-white/[0.07] rounded-2xl p-7 hover:bg-white/[0.05] ${category.borderHover} transition-all duration-400 group relative overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)]`}
+                            transition={{ duration: 0.4, delay: idx * 0.05 }}
+                            className="bg-surface rounded-2xl p-6 border border-white/[0.06] hover:border-white/[0.12] transition-all duration-300 group"
+                            style={{ borderTopColor: category.accent, borderTopWidth: '3px' }}
                         >
-                            {/* Category-specific gradient glow on hover */}
-                            <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}></div>
-
-                            <h3 className="text-sm font-semibold mb-5 text-foreground/80 group-hover:text-white transition-colors tracking-[0.08em] uppercase relative z-10">
+                            <h3
+                                className="font-mono text-xs font-semibold mb-4 tracking-[0.12em] uppercase"
+                                style={{ color: category.accent }}
+                            >
                                 {category.title}
                             </h3>
-                            <div className="flex flex-wrap gap-2.5 relative z-10">
+                            <div className="flex flex-wrap gap-2">
                                 {category.skills.map((skill) => (
                                     <span
                                         key={skill}
-                                        className="px-3.5 py-1.5 bg-white/[0.05] rounded-lg text-[0.8rem] font-medium text-foreground/70 border border-white/[0.07] group-hover:border-white/15 group-hover:text-foreground/90 group-hover:bg-white/[0.07] transition-all duration-300"
+                                        className="px-3 py-1.5 bg-white/[0.04] rounded-lg text-[0.8rem] font-medium text-foreground/65 border border-white/[0.06] group-hover:text-foreground/80 transition-colors duration-300"
                                     >
                                         {skill}
                                     </span>
