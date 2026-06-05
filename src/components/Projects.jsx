@@ -33,21 +33,6 @@ const projects = [
         github: 'https://github.com/Akashnavani/chat-app',
         live: 'https://chat-app-7-vy0q.onrender.com/',
         image: '/projects/chat-app.png',
-    },
-    {
-        title: 'PrepAI — AI Interview Prep & Resume Platform',
-        description: 'A full-stack AI coaching platform using React 19, Vite, Sass, Express, and MongoDB to deliver customized interview plans and dynamic candidate-to-job matching metrics.',
-        tech: ['React 19', 'Vite', 'Sass', 'Express', 'MongoDB', 'Google GenAI (Gemini)', 'Puppeteer', 'Multer', 'Zod'],
-        highlights: [
-            'Architected a full-stack AI coaching platform using React 19, Vite, Sass, Express, and MongoDB to deliver customized interview plans and dynamic candidate-to-job matching metrics.',
-            'Integrated Google GenAI SDK (Gemini-3-Flash) with Zod-based schema validation to ensure type-safe, structured JSON generation for technical/behavioral preparation guides and day-wise study plans.',
-            'Engineered an automated PDF compilation engine utilizing Puppeteer in headless mode to render tailored HTML profiles into pixel-perfect, ATS-friendly A4 resumes.',
-            'Developed a memory-efficient file upload and parsing pipeline using Multer and pdf-parse to extract raw text from binary PDF resumes in-memory, minimizing server processing overhead.',
-            'Designed structured MongoDB schemas via Mongoose to store user profile metrics, calculate job-alignment match scores, and track identified skill gaps classified by severity level.',
-        ],
-        github: 'https://github.com/Akashnavani/InterviewAI',
-        live: 'https://prep-ai.onrender.com',
-        image: '/projects/prepai.png',
     }
 ];
 

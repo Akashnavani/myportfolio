@@ -1,12 +1,27 @@
 import { motion } from 'framer-motion';
-import { Trophy } from 'lucide-react';
+import { Trophy, Briefcase } from 'lucide-react';
+
+const workExperience = [
+    {
+        role: 'Full Stack Developer Intern',
+        company: 'A2lytics Pvt Ltd, Remote',
+        duration: 'Jan 2025 – Mar 2025',
+        description: 'Developed an AI-powered interview preparation platform using the MERN stack, enabling users to generate interview questions, analyze resumes, and receive AI-driven feedback through a scalable cloud-ready architecture.',
+        highlights: [
+            'Architected a modern Full-Stack web application using React.js (Vite), Node.js, Express.js, and MongoDB, delivering a responsive user experience and scalable backend services.',
+            'Integrated Google Gemini AI API to generate personalized interview questions and provide intelligent feedback based on user profiles and responses.',
+            'Developed an automated PDF resume parsing system using pdf-parse, extracting candidate information to streamline interview preparation workflows.',
+            'Designed and implemented a CI/CD pipeline using Jenkins, Docker, SonarQube, and Trivy, enabling automated builds, code quality analysis, vulnerability scanning, and deployment.'
+        ]
+    }
+];
 
 const education = [
     {
         degree: 'B.E in Information Science & Engineering',
         institution: 'Ramaiah Institute of Technology, Bengaluru',
         year: '2024 – Present',
-        score: 'GPA: 7.84',
+        score: 'GPA: 8.06',
     },
     {
         degree: 'Diploma in Computer Science & Engineering',
@@ -33,7 +48,7 @@ const achievements = [
     },
     {
         title: 'Hackathon Award',
-        description: 'Secured 3rd place in Project Exhibition "Technovision-24".',
+        description: 'Secured 3rd place in Project Exhibition "Technovision-25".',
         link: 'https://drive.google.com/file/d/1ZGdREYMZfGXpLMgGsuxg9SB8pRnQin1U/view',
     },
 ];
@@ -53,13 +68,64 @@ const Experience = () => {
                     className="mb-12"
                 >
                     <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">
-                        Education
+                        Experience & Education
                     </h2>
                     <div className="w-12 h-[3px] bg-gradient-to-r from-primary to-accent rounded-full" />
                 </motion.div>
 
+                {/* Work Experience */}
+                <div className="mb-16">
+                    <div className="flex items-center gap-3 mb-8">
+                        <Briefcase size={20} className="text-primary" />
+                        <h3 className="font-display text-2xl font-bold tracking-tight text-foreground">
+                            Work Experience
+                        </h3>
+                    </div>
+                    <div className="space-y-8">
+                        {workExperience.map((item, idx) => (
+                            <motion.div
+                                key={item.role}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: '-50px' }}
+                                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                                className="bg-surface rounded-2xl p-6 md:p-8 border border-white/[0.06] hover:border-primary/20 transition-all duration-300 relative group"
+                            >
+                                <div className="absolute top-0 left-0 w-1 h-full bg-primary/40 rounded-l-2xl group-hover:bg-primary transition-colors duration-300" />
+                                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4 pl-3">
+                                    <div>
+                                        <h3 className="font-display text-xl font-bold text-foreground mb-1 tracking-tight">
+                                            {item.role}
+                                        </h3>
+                                        <p className="text-primary/90 text-sm font-medium">
+                                            {item.company}
+                                        </p>
+                                    </div>
+                                    <span className="font-mono text-xs font-semibold text-muted/80 bg-white/[0.03] border border-white/[0.08] px-3 py-1.5 rounded-lg shrink-0 w-fit">
+                                        {item.duration}
+                                    </span>
+                                </div>
+                                <div className="pl-3 space-y-4 text-muted text-sm leading-relaxed">
+                                    <p>{item.description}</p>
+                                    <ul className="space-y-2">
+                                        {item.highlights.map((highlight, hIdx) => (
+                                            <li key={hIdx} className="flex items-start gap-2.5">
+                                                <span className="mt-[7px] min-w-[5px] h-[5px] rounded-full bg-accent/70 inline-block shrink-0" />
+                                                <span className="text-foreground/70">{highlight}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
                 {/* Education timeline */}
                 <div className="space-y-0 mb-16">
+                    <h3 className="font-display text-2xl font-bold tracking-tight text-foreground mb-6">
+                        Education
+                    </h3>
                     {education.map((item, idx) => (
                         <motion.div
                             key={item.degree}
