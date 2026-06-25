@@ -31,7 +31,7 @@ const projects = [
             'Developed robust REST APIs following the MVC architecture pattern, ensuring a clean separation of concerns that improved code reusability and overall maintainability.',
         ],
         github: 'https://github.com/Akashnavani/chat-app',
-        live: 'https://chat-app-7-vy0q.onrender.com/',
+        live: 'https://chat-app-8-lsnw.onrender.com/',
         image: '/projects/chat-app.png',
     }
 ];
