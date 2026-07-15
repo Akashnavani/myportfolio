@@ -49,7 +49,6 @@ const achievements = [
     {
         title: 'Hackathon Award',
         description: 'Secured 3rd place in Project Exhibition "Technovision-25".',
-        link: 'https://drive.google.com/file/d/1ZGdREYMZfGXpLMgGsuxg9SB8pRnQin1U/view',
     },
 ];
 

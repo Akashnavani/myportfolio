@@ -15,7 +15,7 @@ const projects = [
             'Designed scalable RESTful APIs with secure routing, robust middleware validation, and optimized data handling to ensure reliable and performant system operation.',
         ],
         github: 'https://github.com/Akashnavani/Smart-Report-Generator.git',
-        live: 'https://msr-frontend-754411699176.us-central1.run.app/',
+        live: 'https://student-dashboard-sigma-henna.vercel.app/student/dashboard?tab=performance',
         image: '/projects/report-gen.png',
     },
     {
